@@ -9,7 +9,7 @@ import { useAudio, useWindowSize, useMount } from "react-use";
 
 import { reduceHearts } from "@/actions/user-progress";
 import { useHeartsModal } from "@/store/use-hearts-modal";
-import { challengeOptions, challenges } from "@/db/schema";
+import { challengeOptions, challenges, userSubscription } from "@/db/schema";
 
 import { upsertChallengeProgress } from "@/actions/challenge-progress";
 
@@ -28,11 +28,11 @@ type Props = {
     completed: boolean;
     challengeOptions: (typeof challengeOptions.$inferSelect)[];
   })[];
-  //   userSubscription:
-  //     | (typeof userSubscription.$inferSelect & {
-  //         isActive: boolean;
-  //       })
-  //     | null;
+  userSubscription:
+    | (typeof userSubscription.$inferSelect & {
+        isActive: boolean;
+      })
+    | null;
 };
 
 export const Quiz = ({
@@ -40,7 +40,7 @@ export const Quiz = ({
   initialHearts,
   initialLessonId,
   initialLessonChallenges,
-  // userSubscription,
+  userSubscription,
 }: Props) => {
   const { open: openHeartsModal } = useHeartsModal();
   const { open: openPracticeModal } = usePracticeModal();
@@ -209,7 +209,7 @@ export const Quiz = ({
       <Header
         hearts={hearts}
         percentage={percentage}
-        hasActiveSubscription={false}
+        hasActiveSubscription={!!userSubscription?.isActive}
       />
       <div className="flex-1">
         <div className="flex h-full items-center justify-center">

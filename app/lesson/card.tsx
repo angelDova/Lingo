@@ -36,7 +36,7 @@ export const Card = ({
 
     controls.play();
     onClick();
-  }, [disabled, onclick, controls]);
+  }, [disabled, onClick, controls]);
 
   useKey(shortcut, handleClick, {}, [handleClick]);
 

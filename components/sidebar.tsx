@@ -28,12 +28,12 @@ export const Sidebar = ({ className }: Props) => {
       <div className="flex flex-1 flex-col gap-y-2">
         <SidebarItem href="/learn" label="Learn" iconSrc="/learn.svg" />
         <SidebarItem
-          href="/Leaderboard"
+          href="/leaderboard"
           label="leaderboard"
           iconSrc="/leaderboard.svg"
         />
-        <SidebarItem href="/Quests" label="quests" iconSrc="/quests.svg" />
-        <SidebarItem href="/Shop" label="shop" iconSrc="/shop.svg" />
+        <SidebarItem href="/quests" label="quests" iconSrc="/quests.svg" />
+        <SidebarItem href="/shop" label="shop" iconSrc="/shop.svg" />
         <div className="flex items-center justify-center pt-20">
           <Image
             src={
