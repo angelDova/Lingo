@@ -33,7 +33,7 @@ const QuestsPage = async () => {
           points={userProgress.points}
           hasActiveSubscription={isPro}
         />
-        {/* {!isPro && <Promo />} */}
+        {!isPro && <Promo />}
       </StickyWrapper>
       <FeedWrapper>
         <div className="flex w-full flex-col items-center">
